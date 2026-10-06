@@ -1,0 +1,44 @@
+{
+    "name": "tw-ts-go",
+    "version": "0.26.1",
+    "description": "Rewrite TypeScript import and export statements, and check files that still break the rules",
+    "author": "Max Zakharzhevskyi",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/maxzz/tw-ts-go.git"
+    },
+    "bugs": {
+        "url": "https://github.com/maxzz/tw-ts-go/issues"
+    },
+    "homepage": "https://github.com/maxzz/tw-ts-go#readme",
+    "keywords": [
+        "typescript",
+        "imports",
+        "exports",
+        "lint",
+        "cli",
+        "tsx"
+    ],
+    "engines": {
+        "node": ">=18"
+    },
+    "bin": {
+        "twts": "./bin/twts.js"
+    },
+    "files": [
+        "bin",
+        "binaries",
+        "README.md"
+    ],
+    "type": "module",
+    "scripts": {
+        "dev": "go run ./cmd/twts -c ./testdata",
+        "fix": "go run ./cmd/twts ./testdata",
+        "test": "go test ./...",
+        "build": "node scripts/sync-version.mjs --bump && node scripts/build-binaries.mjs",
+        "build:all": "node scripts/sync-version.mjs --bump && node scripts/build-binaries.mjs --all",
+        "prepublishOnly": "pnpm run build:all",
+        "to-npm": "pnpm publish"
+    }
+}
