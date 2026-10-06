@@ -1,6 +1,6 @@
 {
     "name": "tw-ts-go",
-    "version": "0.26.1",
+    "version": "0.26.2",
     "description": "Rewrite TypeScript import and export statements, and check files that still break the rules",
     "author": "Max Zakharzhevskyi",
     "license": "MIT",
